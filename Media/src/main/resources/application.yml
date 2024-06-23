@@ -1,0 +1,40 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: media
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/wrq
+    username: root
+    password: Wangriqing0324
+  # 文件上传
+  servlet:
+    multipart:
+      max-file-size: 10MB # 设置单个文件最大大小为10MB
+      max-request-size: 100MB # 设置多个文件大小为100MB
+      enabled: true
+  redis:
+    host: 127.0.0.1
+    port: 6379
+  # Nacos注册发现
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.8.128:8848
+        namespace: 7658086a-6d49-4bf7-905f-62c2f014eeaa
+
+# Mybatis配置
+mybatis:
+  mapper-locations: classpath:/mapper/*Mapper.xml   # 指定resource目录下的XxxMapper配置文件
+  type-aliases-package: wrq.model.po   # 简化resultType中的po类名
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl   # 配置Mybatis的日志
+    map-underscore-to-camel-case: true    # 支持数据表字段下划线与驼峰命名的转换
+
+# Minio配置
+minio:
+  endpoint: http://127.0.0.1:9000
+  bucketName: wrq
+  user: wrq
+  password: 03241818
+

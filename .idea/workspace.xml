@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="770dd2cb-47da-432a-a784-8d65114367c9" name="更改" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Application" />
+        <option value="Interface" />
+        <option value="XxxMapper配置文件" />
+        <option value="MyUserDetails" />
+        <option value="UserDetailsServiceImpl" />
+        <option value="bootstrap" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Content/pom.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/ContentApplication.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/config/SecurityConfig.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/controller/ContentController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/controller/TestController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/filter/TokenFilter.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/mapper/RoleMapper.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/mapper/UserMapper.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/model/dto/RoleResponse.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/model/po/Role.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/model/po/User.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/service/RoleService.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/service/impl/RoleServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/service/impl/UserDetailsServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/util/JWTUtil.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/resources/application.yml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/resources/bootstrap.yml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/resources/mapper/RoleMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/resources/mapper/UserMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/test/java/ContentTest.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Gateway/pom.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/GatewayApplication.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/config/AuthenticationFailHandler.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/config/AuthenticationSuccessHandler.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/config/SecurityConfig.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/controller/TestController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/controller/TokenController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/mapper/UserMapper.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/model/dto/ResponseData.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/model/po/User.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/model/pojo/MyUserDetail.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/service/impl/UserDetailsServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/utils/JWTUtil.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Gateway/src/main/resources/application.yml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Gateway/src/main/resources/mapper/UserMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Gateway/src/test/java/GatewayTest.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/pom.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/MediaApplication.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/config/MinioConfig.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/config/SecurityConfig.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/controller/MediaController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/controller/TestController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/filter/TokenFilter.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/mapper/UserMapper.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/model/dto/Picture.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/model/po/User.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/model/pojo/MyUserDetails.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/service/impl/UserDetailsServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/utils/JWTUtil.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/utils/MinioUtil.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/src/main/resources/application.yml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/src/main/resources/mapper/UserMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/src/test/java/MediaTest.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/pom.xml" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:/apache-maven-3.8.6" />
+        <option name="showDialogWithAdvancedSettings" value="true" />
+        <option name="useMavenConfig" value="true" />
+        <option name="userSettingsFile" value="D:\apache-maven-3.8.6\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2gWyHPlTuzRQIaoaXyTNMCYSKCF" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Java/Rotation/Media/src/main/resources/mapper&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;fileTemplates&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Java\Rotation\Media\src\main\resources\mapper" />
+      <recent name="E:\Java\Rotation\Content\src\main\java\wrq\rotation\util" />
+      <recent name="E:\Java\Rotation\Media\src\main\java\wrq\rotation\utils" />
+      <recent name="E:\Java\Rotation\Media\src\main\java\wrq\rotation\config" />
+      <recent name="E:\Java\Rotation\Gateway\src\main\java\wrq\rotation\utils" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="wrq.rotation.model.pojo" />
+      <recent name="wrq.rotation.model.dto" />
+      <recent name="wrq.rotation.utils" />
+      <recent name="wrq.rotation.mapper" />
+      <recent name="wrq.rotation.service.impl" />
+    </key>
+  </component>
+  <component name="RunManager" selected="应用程序.GatewayApplication">
+    <configuration name="ContentApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="wrq.rotation.ContentApplication" />
+      <module name="Content" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="wrq.rotation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="wrq.rotation.GatewayApplication" />
+      <module name="Gateway" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="wrq.rotation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MediaApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="wrq.rotation.MediaApplication" />
+      <module name="Media" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContentTest.test01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Content" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ContentTest" />
+      <option name="METHOD_NAME" value="test01" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GatewayTest.test01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Gateway" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GatewayTest" />
+      <option name="METHOD_NAME" value="test01" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="应用程序.GatewayApplication" />
+        <item itemvalue="应用程序.ContentApplication" />
+        <item itemvalue="应用程序.MediaApplication" />
+        <item itemvalue="JUnit.ContentTest.test01" />
+        <item itemvalue="JUnit.GatewayTest.test01" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="770dd2cb-47da-432a-a784-8d65114367c9" name="更改" comment="" />
+      <created>1715827541977</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1715827541977</updated>
+    </task>
+    <servers />
+  </component>
+</project>

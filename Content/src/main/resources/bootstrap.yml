@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: content
+  profiles:
+    active: dev # 开发环境
+  cloud:
+    nacos:
+      # 读取的配置文件名为content-dev.yaml
+      config:
+        server-addr: 192.168.8.128:8848 #nacos配置中心的地址
+        file-extension: yaml # 远程配置文件的类型
+        namespace: 7658086a-6d49-4bf7-905f-62c2f014eeaa # 命名空间ID
+        group: WRQ # 组名
+        enabled: false
+        refresh-enabled: false

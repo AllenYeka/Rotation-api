@@ -1,0 +1,58 @@
+server:
+  port: 8079
+spring:
+  application:
+    name: gateway
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/wrq
+    username: root
+    password: Wangriqing0324
+  redis:
+    host: 127.0.0.1
+    port: 6379
+  # Nacos注册中心
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.8.128:8848
+        namespace: 7658086a-6d49-4bf7-905f-62c2f014eeaa
+        enabled: false
+    gateway:
+      routes:
+        - id: toContent
+          uri: lb://content
+          predicates:
+            - Path=/content/**
+        - id: toMedia
+          uri: lb://media
+          predicates:
+            - Path=/media/**
+  # 第三方登录
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: Ov23lipUEoYvRhFlGKo0
+            clientSecret: 0b0b741c4556c2105d3479ff94e0dae0ae7e9b24
+            redirectUri: http://localhost:5379/
+          gitee:
+            client-id: 13f223ff6430370d8c1c72f205d012f48683573db683e7b1de977dd9a83743f6
+            client-secret: 3b37caff1a9ba15e9b9cb733570397a84df13c78912b3db31e1da156a3b46c6c
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:5379/
+            client-name: Gitee
+        provider:
+          gitee:
+            authorization-uri: https://gitee.com/oauth/authorize
+            token-uri: https://gitee.com/oauth/token
+            user-info-uri: https://gitee.com/api/v5/user
+            user-name-attribute: name
+
+# Mybatis配置
+mybatis:
+  mapper-locations: classpath:/mapper/*Mapper.xml   # 指定resource目录下的XxxMapper配置文件
+  type-aliases-package: wrq.rotation.model.po   # 简化resultType中的po类名
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl   # 配置Mybatis的日志
+    map-underscore-to-camel-case: true    # 支持数据表字段下划线与驼峰命名的转换
