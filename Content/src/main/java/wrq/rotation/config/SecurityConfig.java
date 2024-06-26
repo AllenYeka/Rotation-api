@@ -38,7 +38,7 @@ public class SecurityConfig {
     @Bean
     protected SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeRequests()//链式配置url的保护规则
-                .antMatchers("/login").permitAll()//不需要认证直接访问
+                .antMatchers("/login","/content/test/**").permitAll()//不需要认证直接访问
                 .anyRequest().authenticated();//(除了以上之外)所有请求需要认证
         http.addFilterBefore(tokenFilter, UsernamePasswordAuthenticationFilter.class);
         http.csrf().disable();

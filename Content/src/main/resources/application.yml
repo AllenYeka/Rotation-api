@@ -16,7 +16,7 @@ spring:
       discovery:
         server-addr: 192.168.8.128:8848
         namespace: 7658086a-6d49-4bf7-905f-62c2f014eeaa
-        enabled: false
+        enabled: true
     # sentinel流控规则
     sentinel:
       transport:

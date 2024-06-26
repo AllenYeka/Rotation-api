@@ -9,6 +9,7 @@ import org.springframework.security.crypto.bcrypt.BCrypt;
 import wrq.rotation.ContentApplication;
 import wrq.rotation.mapper.RoleMapper;
 import wrq.rotation.model.po.Role;
+import wrq.rotation.service.MenuService;
 import wrq.rotation.service.RoleService;
 import wrq.rotation.util.JWTUtil;
 
@@ -19,12 +20,10 @@ import java.util.Map;
 public class ContentTest {
     @Autowired
     private RoleService roleService;
-
     @Autowired
-    private RoleMapper roleMapper;
-
+    private MenuService menuService;
     @Test
     public void test01(){
-
+        System.out.println(menuService.menuList());
     }
 }
