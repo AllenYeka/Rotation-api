@@ -58,12 +58,10 @@ public class SecurityConfig {
                 .pathMatchers("/login","/oauth/**","/getAccessToken").permitAll()
                 .pathMatchers("/content/**","/media/**").permitAll()//不需要认证直接访问
                 .anyExchange().authenticated();//(除了以上之外)所有请求需要认证
-        http.formLogin()
+        http.formLogin()//提供login接口
                 .authenticationSuccessHandler(successHandler)
                 .authenticationFailureHandler(failHandler);
-        http.oauth2Client().and().oauth2Login()
-                .authenticationSuccessHandler(successHandler)
-                .authenticationFailureHandler(failHandler);
+        http.oauth2Client().and().oauth2Login();
         http.logout().logoutUrl("/logout");
         http.csrf().disable();
         return http.build();
