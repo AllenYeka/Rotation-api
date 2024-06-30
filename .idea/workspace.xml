@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="770dd2cb-47da-432a-a784-8d65114367c9" name="更改" comment="" />
+    <list default="true" id="770dd2cb-47da-432a-a784-8d65114367c9" name="更改" comment="0630优化了文件的存储逻辑" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,33 +14,43 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Application" />
-        <option value="Interface" />
-        <option value="XxxMapper配置文件" />
         <option value="MyUserDetails" />
         <option value="UserDetailsServiceImpl" />
         <option value="bootstrap" />
+        <option value="XxxMapper配置文件" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Content/pom.xml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/ContentApplication.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/config/SecurityConfig.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/controller/ContentController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/controller/MenuController.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/controller/TestController.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/filter/TokenFilter.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/mapper/MenuMapper.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/mapper/RoleMapper.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/mapper/UserMapper.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/model/dto/MenuItemDto.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/model/dto/RoleResponse.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/model/po/MenuItem.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/model/po/Role.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/model/po/User.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/service/MenuService.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/service/RoleService.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/service/impl/MenuServiceImpl.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/service/impl/RoleServiceImpl.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/service/impl/UserDetailsServiceImpl.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/util/JWTUtil.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Content/src/main/resources/application.yml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Content/src/main/resources/bootstrap.yml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/resources/mapper/MenuMapper.xml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Content/src/main/resources/mapper/RoleMapper.xml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Content/src/main/resources/mapper/UserMapper.xml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Content/src/test/java/ContentTest.java" root0="SKIP_INSPECTION" />
@@ -67,14 +77,18 @@
     <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/controller/MediaController.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/controller/TestController.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/filter/TokenFilter.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/mapper/MediaMapper.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/mapper/UserMapper.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/model/dto/Picture.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/model/po/Media.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/model/po/User.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/model/pojo/MyUserDetails.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/service/MediaService.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/service/impl/MediaServiceImpl.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/service/impl/UserDetailsServiceImpl.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/utils/JWTUtil.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/utils/MinioUtil.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Media/src/main/resources/application.yml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/src/main/resources/mapper/MediaMapper.xml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Media/src/main/resources/mapper/UserMapper.xml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Media/src/test/java/MediaTest.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/pom.xml" root0="SKIP_INSPECTION" />
@@ -93,19 +107,23 @@
     </option>
   </component>
   <component name="ProjectId" id="2gWyHPlTuzRQIaoaXyTNMCYSKCF" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Java/Rotation/Media/src/main/resources/mapper&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;fileTemplates&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "jdk.selected.JAVA_MODULE": "openjdk-17",
+    "last_opened_file_path": "E:/Java/Rotation/Media/src/main/resources/mapper",
+    "settings.editor.selected.configurable": "fileTemplates"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Java\Rotation\Media\src\main\resources\mapper" />
@@ -122,7 +140,7 @@
       <recent name="wrq.rotation.service.impl" />
     </key>
   </component>
-  <component name="RunManager" selected="应用程序.GatewayApplication">
+  <component name="RunManager" selected="应用程序.MediaApplication">
     <configuration name="ContentApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="wrq.rotation.ContentApplication" />
       <module name="Content" />
@@ -166,11 +184,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GatewayTest.test01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Gateway" />
+    <configuration name="MediaTest.test02" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Media" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GatewayTest" />
-      <option name="METHOD_NAME" value="test01" />
+      <option name="MAIN_CLASS_NAME" value="MediaTest" />
+      <option name="METHOD_NAME" value="test02" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -178,11 +196,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="应用程序.GatewayApplication" />
-        <item itemvalue="应用程序.ContentApplication" />
         <item itemvalue="应用程序.MediaApplication" />
+        <item itemvalue="应用程序.ContentApplication" />
+        <item itemvalue="JUnit.MediaTest.test02" />
+        <item itemvalue="应用程序.GatewayApplication" />
         <item itemvalue="JUnit.ContentTest.test01" />
-        <item itemvalue="JUnit.GatewayTest.test01" />
       </list>
     </recent_temporary>
   </component>
@@ -195,6 +213,46 @@
       <option name="presentableId" value="Default" />
       <updated>1715827541977</updated>
     </task>
+    <task id="LOCAL-00001" summary="0626添加了menu的相关api">
+      <created>1719384698431</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1719384698431</updated>
+    </task>
+    <task id="LOCAL-00002" summary="0628修改了securityConfig">
+      <created>1719556205965</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1719556205965</updated>
+    </task>
+    <task id="LOCAL-00003" summary="0630优化了文件的存储逻辑">
+      <created>1719732530745</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1719732530745</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="0626添加了menu的相关api" />
+    <MESSAGE value="0628修改了securityConfig" />
+    <MESSAGE value="0630优化了文件的存储逻辑" />
+    <option name="LAST_COMMIT_MESSAGE" value="0630优化了文件的存储逻辑" />
   </component>
 </project>
