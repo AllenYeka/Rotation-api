@@ -1,14 +1,18 @@
 package wrq.rotation.controller;
 import com.alibaba.fastjson.JSON;
+import com.github.pagehelper.PageHelper;
 import io.minio.messages.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import wrq.rotation.model.dto.Picture;
+import wrq.rotation.model.po.Media;
+import wrq.rotation.service.MediaService;
 import wrq.rotation.utils.MinioUtil;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.net.URLDecoder;
 import java.time.Duration;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -21,25 +25,23 @@ public class MediaController {
     private MinioUtil minioUtil;
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
+    @Autowired
+    private MediaService mediaService;
 
     @GetMapping("/getPictureByPageNo/{pageNo}")
-    public List<Picture> getAllPicture(@PathVariable int pageNo){
-        List<Picture> pictures=null;
-        if(stringRedisTemplate.opsForValue().get("pictures"+pageNo)!=null) {
-            pictures=JSON.parseArray(stringRedisTemplate.opsForValue().get("pictures"+pageNo),Picture.class);
-            System.out.println("走redis缓存"+pictures);
+    public List<Media> getAllMedia(@PathVariable int pageNo){
+        List<Media> medias=null;
+        if(stringRedisTemplate.opsForValue().get("medias"+pageNo)!=null) {
+            medias=JSON.parseArray(stringRedisTemplate.opsForValue().get("medias"+pageNo),Media.class);
+            System.out.println("走redis缓存"+medias);
         }
         else{
-            List<Item> items=minioUtil.fileList();
-            pictures=items.stream()
-                    .map((item)->{return new Picture(item.objectName(),minioUtil.prePicture(item.objectName()));})
-                    .skip((pageNo-1)*PAGE_SIZE)
-                    .limit(PAGE_SIZE)
-                    .collect(Collectors.toList());
-            stringRedisTemplate.opsForValue().set("pictures"+pageNo,JSON.toJSONString(pictures),Duration.ofMinutes(1));
-            System.out.println("走文件系统"+pictures);
+            PageHelper.startPage(pageNo,PAGE_SIZE);
+            medias=mediaService.getAllMedia();
+            System.out.println("走数据库"+medias);
+            stringRedisTemplate.opsForValue().set("medias"+pageNo,JSON.toJSONString(medias),Duration.ofMinutes(1));
         }
-        return pictures;
+        return medias;
     }
 
     @GetMapping("/getPictureCount")
@@ -48,15 +50,27 @@ public class MediaController {
     }
 
     @PostMapping("/uploadPicture")
-    public void uploadPicture(@RequestParam("file") List<MultipartFile> fileList) throws IOException {
-        System.out.println(fileList.get(0).getOriginalFilename());
-        for(MultipartFile file:fileList)
-            minioUtil.upload(file.getOriginalFilename(),file.getInputStream());
+    public void uploadPicture(@RequestParam("file") List<MultipartFile> fileList, HttpServletRequest request) throws IOException {
+        String username= URLDecoder.decode(request.getHeader("RUser"),"UTF-8");
+        String userAvatarUrl= request.getHeader("Ravatar");
+        String RPageNo= request.getHeader("RPageNo");
+        Media media=new Media(username,userAvatarUrl);
+        for(MultipartFile file:fileList) {
+            String fileName=file.getOriginalFilename();
+            String objectName=fileName.substring(fileName.lastIndexOf("\\")+1);
+            media.setObjectName(objectName);
+            minioUtil.upload(fileName, file.getInputStream());
+            media.setObjectUrl(minioUtil.prePicture(objectName));
+            mediaService.addMedia(media);
+        }
+        stringRedisTemplate.delete("medias"+RPageNo);
     }
 
     @GetMapping("/deletePicture")
-    public boolean getPictureCount(String objectName,int pageNo){
-        stringRedisTemplate.delete("pictures"+pageNo);
+    public boolean deletePicture(int pictureId,int pageNo){
+        stringRedisTemplate.delete("medias"+pageNo);
+        String objectName=mediaService.getMediaById(pictureId).getObjectName();
+        mediaService.deleteMedia(pictureId);
         return minioUtil.removeFile(objectName);
     }
 }

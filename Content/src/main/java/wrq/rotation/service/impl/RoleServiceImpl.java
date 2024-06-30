@@ -21,13 +21,12 @@ public class RoleServiceImpl implements RoleService {
     private RoleMapper roleMapper;
 
     @Override
-    public PageInfo<Role> getRole(int pageNo) {
+    public List<Role> getRole(int pageNo) {
         System.out.println("roles"+pageNo+"--->访问数据库");
         PageHelper.startPage(pageNo,PAGE_SIZE);
         List<Role> roleList=roleMapper.queryAllRole();
-        PageInfo<Role> roles=new PageInfo<>(roleList);
         stringRedisTemplate.opsForValue().set("roles"+pageNo, JSON.toJSONString(roleList), Duration.ofMinutes(1));
-        return roles;
+        return roleList;
     }
 
     @Override

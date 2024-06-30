@@ -1,10 +1,14 @@
 import com.alibaba.fastjson.JSON;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import io.minio.messages.Item;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import wrq.rotation.MediaApplication;
+import wrq.rotation.model.po.Media;
+import wrq.rotation.service.MediaService;
 import wrq.rotation.utils.MinioUtil;
 
 import java.util.ArrayList;
@@ -17,12 +21,15 @@ public class MediaTest {
     private StringRedisTemplate stringRedisTemplate;
     @Autowired
     private MinioUtil minioUtil;
-
+    @Autowired
+    private MediaService mediaService;
     @Test
     public void test02(){
-
+        PageHelper.startPage(1,3);
+        List<Media> medias=mediaService.getAllMedia();
+        for(Media media:medias)
+            System.out.println(media);
     }
-
     @Test
     public void test01(){
         List<Item> items=minioUtil.fileList();

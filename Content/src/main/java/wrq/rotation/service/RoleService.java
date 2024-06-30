@@ -5,7 +5,7 @@ import wrq.rotation.model.po.Role;
 import java.util.List;
 
 public interface RoleService {
-    PageInfo<Role> getRole(int pageNo);
+    List<Role> getRole(int pageNo);
     int getRoleCount();
     RoleResponse deleteRole(int id);
     Role editRole(Role role);

@@ -28,7 +28,7 @@ public class ContentController {
             return roleList;
         }
         else
-            return roleService.getRole(pageNo).getList();
+            return roleService.getRole(pageNo);
     }
 
     @GetMapping("/getRoleCount")
