@@ -25,10 +25,8 @@ public class MediaTest {
     private MediaService mediaService;
     @Test
     public void test02(){
-        PageHelper.startPage(1,3);
-        List<Media> medias=mediaService.getAllMedia();
-        for(Media media:medias)
-            System.out.println(media);
+        String url="http://127.0.0.1:9000/wrq/%E7%99%BD%E8%89%B2.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=wrq%2F20240630%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240630T062655Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=2e3487f93a7b11af261c58801b771fa1a928fb0841cf891afc37a7abf18a72e0";
+        System.out.println(url.split("\\?")[0]);
     }
     @Test
     public void test01(){

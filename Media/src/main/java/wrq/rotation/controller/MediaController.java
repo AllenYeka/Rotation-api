@@ -60,7 +60,7 @@ public class MediaController {
             String objectName=fileName.substring(fileName.lastIndexOf("\\")+1);
             media.setObjectName(objectName);
             minioUtil.upload(fileName, file.getInputStream());
-            media.setObjectUrl(minioUtil.prePicture(objectName));
+            media.setObjectUrl(minioUtil.prePicture(objectName).split("\\?")[0]);
             mediaService.addMedia(media);
         }
         stringRedisTemplate.delete("medias"+RPageNo);
