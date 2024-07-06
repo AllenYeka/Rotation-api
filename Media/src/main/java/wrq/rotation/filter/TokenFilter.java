@@ -36,7 +36,7 @@ public class TokenFilter extends OncePerRequestFilter {
 
         /* token为空 */
         String token=request.getHeader("Authorization");
-        if("".equals(token)) {
+        if("".equals(token)||token==null) {
             mediaResponse.setMessage("token为空");
             PrintWriter writer=response.getWriter();
             writer.print(JSON.toJSONString(mediaResponse));

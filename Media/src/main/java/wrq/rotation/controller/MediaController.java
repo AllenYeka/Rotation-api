@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import wrq.rotation.model.dto.MediaResponse;
 import wrq.rotation.model.po.Media;
 import wrq.rotation.service.MediaService;
 import wrq.rotation.utils.MinioUtil;
@@ -72,5 +73,10 @@ public class MediaController {
         String objectName=mediaService.getMediaById(pictureId).getObjectName();
         mediaService.deleteMedia(pictureId);
         return minioUtil.removeFile(objectName);
+    }
+
+    @GetMapping("/getMediaByUser")
+    public List<Media>  getMediaByUser(String username){
+        return mediaService.getMediaByUser(username);
     }
 }
