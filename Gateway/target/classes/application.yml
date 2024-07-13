@@ -27,27 +27,7 @@ spring:
           uri: lb://media
           predicates:
             - Path=/media/**
-  # 第三方登录
-  security:
-    oauth2:
-      client:
-        registration:
-          github:
-            clientId: Ov23lipUEoYvRhFlGKo0
-            clientSecret: 0b0b741c4556c2105d3479ff94e0dae0ae7e9b24
-            redirectUri: http://localhost:5379/
-          gitee:
-            client-id: 13f223ff6430370d8c1c72f205d012f48683573db683e7b1de977dd9a83743f6
-            client-secret: 3b37caff1a9ba15e9b9cb733570397a84df13c78912b3db31e1da156a3b46c6c
-            authorization-grant-type: authorization_code
-            redirect-uri: http://localhost:5379/
-            client-name: Gitee
-        provider:
-          gitee:
-            authorization-uri: https://gitee.com/oauth/authorize
-            token-uri: https://gitee.com/oauth/token
-            user-info-uri: https://gitee.com/api/v5/user
-            user-name-attribute: name
+
 
 # Mybatis配置
 mybatis:

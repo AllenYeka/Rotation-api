@@ -17,12 +17,6 @@
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
 
-        <!-- OAuth2客户端的依赖 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-oauth2-client</artifactId>
-        </dependency>
-
         <!-- fastjosn的依赖(高版本解决sentinel流控规则添加不上的问题) -->
         <dependency>
             <groupId>com.alibaba</groupId>

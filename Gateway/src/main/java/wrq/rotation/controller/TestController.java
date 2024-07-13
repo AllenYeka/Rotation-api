@@ -2,9 +2,6 @@ package wrq.rotation.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
-import org.springframework.security.oauth2.client.annotation.RegisteredOAuth2AuthorizedClient;
-import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -12,7 +9,6 @@ import wrq.rotation.mapper.UserMapper;
 import wrq.rotation.model.dto.ResponseData;
 import wrq.rotation.model.po.User;
 import wrq.rotation.utils.JWTUtil;
-
 import java.awt.*;
 import java.time.Duration;
 import java.util.HashMap;
