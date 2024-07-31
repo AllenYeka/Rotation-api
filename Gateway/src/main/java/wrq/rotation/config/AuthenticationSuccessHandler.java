@@ -13,6 +13,8 @@ import org.springframework.security.web.server.authentication.ServerAuthenticati
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
 import wrq.rotation.model.dto.ResponseData;
+import wrq.rotation.model.po.User;
+import wrq.rotation.model.pojo.MyUserDetail;
 import wrq.rotation.utils.JWTUtil;
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;
@@ -24,6 +26,11 @@ public class AuthenticationSuccessHandler implements ServerAuthenticationSuccess
     @Override
     public Mono<Void> onAuthenticationSuccess(WebFilterExchange webFilterExchange, Authentication authentication) {
         ServerHttpResponse response = webFilterExchange.getExchange().getResponse();
+
+        /* 获取用户信息 */
+        MyUserDetail myUserDetail=(MyUserDetail)authentication.getPrincipal();
+
+        /* 创造jwt */
         Map<String,String> payload=new HashMap<>();
         payload.put("username",authentication.getName());
         payload.put("password",authentication.getCredentials().toString());
@@ -34,7 +41,8 @@ public class AuthenticationSuccessHandler implements ServerAuthenticationSuccess
         payload.put("auths",auths);
         payload.put("oauth2","false");
         String token= JWTUtil.getToken(payload);
-        String result= JSON.toJSONString(new ResponseData("OK",token));
+
+        String result= JSON.toJSONString(new ResponseData("OK",token,myUserDetail.getUser()));
         DataBuffer data = response.bufferFactory().wrap(result.toString().getBytes(StandardCharsets.UTF_8));
         return response.writeWith(Mono.just(data));
     }

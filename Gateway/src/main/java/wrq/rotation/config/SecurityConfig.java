@@ -30,10 +30,8 @@ public class SecurityConfig {
     @Bean
     protected SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) throws Exception {
         http.authorizeExchange()//链式配置url的保护规则
-                .pathMatchers("/login","/oauth/**","/getAccessToken").permitAll()
-                .pathMatchers("/content/**","/media/**").permitAll()//不需要认证直接访问
-                .anyExchange().authenticated();//(除了以上之外)所有请求需要认证
-        http.formLogin()//提供login接口
+                .anyExchange().permitAll();//所有请求都不需要认证
+        http.formLogin()//提供/login接口
                 .authenticationSuccessHandler(successHandler)
                 .authenticationFailureHandler(failHandler);
         http.logout().logoutUrl("/logout");

@@ -10,6 +10,7 @@ import org.springframework.security.web.server.authentication.ServerAuthenticati
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
 import wrq.rotation.model.dto.ResponseData;
+import wrq.rotation.model.po.User;
 
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
@@ -19,7 +20,7 @@ public class AuthenticationFailHandler implements ServerAuthenticationFailureHan
     @Override
     public Mono<Void> onAuthenticationFailure(WebFilterExchange webFilterExchange, AuthenticationException exception) {
         ServerHttpResponse response = webFilterExchange.getExchange().getResponse();
-        String result= JSON.toJSONString(new ResponseData("ERROR", exception.getMessage().toString()));
+        String result= JSON.toJSONString(new ResponseData("ERROR", exception.getMessage().toString(),null));
         DataBuffer data = response.bufferFactory().wrap(result.toString().getBytes(StandardCharsets.UTF_8));
         return response.writeWith(Mono.just(data));
     }

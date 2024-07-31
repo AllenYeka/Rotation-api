@@ -15,6 +15,8 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.net.URLDecoder;
 import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -59,6 +61,7 @@ public class MediaController {
         for(MultipartFile file:fileList) {
             String fileName=file.getOriginalFilename();
             String objectName=fileName.substring(fileName.lastIndexOf("\\")+1);
+            media.setCreateTime(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
             media.setObjectName(objectName);
             minioUtil.upload(fileName, file.getInputStream());
             media.setObjectUrl(minioUtil.prePicture(objectName).split("\\?")[0]);

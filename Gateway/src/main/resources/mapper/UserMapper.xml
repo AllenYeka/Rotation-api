@@ -4,10 +4,18 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="wrq.rotation.mapper.UserMapper">
     <select id="getAllUser" resultType="wrq.rotation.model.po.User">
-        select*from t_user
+        select*from rotation_user
     </select>
 
     <select id="getUserByName" resultType="wrq.rotation.model.po.User">
-        select*from t_user where username=#{username}
+        select*from rotation_user where username=#{username}
+    </select>
+
+    <insert id="insertUser">
+        insert into rotation_user values(null,#{username},#{password},#{bio},#{email},#{avatarUrl})
+    </insert>
+
+    <select id="getAllUsername" resultType="java.lang.String">
+        select username from rotation_user
     </select>
 </mapper>

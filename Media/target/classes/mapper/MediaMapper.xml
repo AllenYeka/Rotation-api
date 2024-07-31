@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="wrq.rotation.mapper.MediaMapper">
     <insert id="insertMedia">
-        insert into rotation_media values(null,#{objectName},#{username},#{userAvatarUrl},#{objectUrl})
+        insert into rotation_media values(null,#{objectName},#{username},#{createTime},#{userAvatarUrl},#{objectUrl})
     </insert>
 
     <select id="queryAllMedia" resultType="wrq.rotation.model.po.Media">
