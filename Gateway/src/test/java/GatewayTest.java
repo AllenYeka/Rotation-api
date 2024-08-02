@@ -18,6 +18,6 @@ public class GatewayTest {
 
     @Test
     public void test01(){
-        System.out.println(userMapper.getUserById(6));
+        User user=userMapper.getUserById(1);
     }
 }

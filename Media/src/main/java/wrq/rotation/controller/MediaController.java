@@ -85,13 +85,10 @@ public class MediaController {
         return mediaService.getMediaByUser(username);
     }
 
-    @GetMapping("/getUserMediaById")
+    @GetMapping("/getUserMediaByName")
     public UserMediaDto getUserMediaById(String username){
         UserMediaDto userMediaDto=new UserMediaDto();
-        User user= gatewayClient.getUserById(username);
-        List<Media> mediaList=mediaService.getMediaByUser(username);
-        userMediaDto.setUser(user);
-        userMediaDto.setMedia(mediaList);
-        return userMediaDto;
+        User user= gatewayClient.getUserByName(username);
+        return mediaService.getCCF(user);
     }
 }

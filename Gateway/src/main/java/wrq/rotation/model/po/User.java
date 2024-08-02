@@ -13,12 +13,18 @@ public class User {
     private String bio;
     private String email;
     private String avatarUrl;
+    private String collection;
+    private String concern;
+    private String fans;
 
-    public User(String username, String password, String bio, String email, String avatarUrl) {
+    public User(String username, String password, String bio, String email, String avatarUrl, String collection, String concern, String fans) {
         this.username = username;
         this.password = password;
         this.bio = bio;
         this.email = email;
         this.avatarUrl = avatarUrl;
+        this.collection = collection;
+        this.concern = concern;
+        this.fans = fans;
     }
 }

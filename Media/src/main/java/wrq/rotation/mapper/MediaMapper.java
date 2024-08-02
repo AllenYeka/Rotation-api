@@ -1,5 +1,8 @@
 package wrq.rotation.mapper;
+import org.apache.ibatis.annotations.Param;
 import wrq.rotation.model.po.Media;
+import wrq.rotation.model.po.User;
+
 import java.util.List;
 
 public interface MediaMapper {
@@ -8,4 +11,5 @@ public interface MediaMapper {
     List<Media> queryMediaByUser(String username);
     int deleteMedia(int id);
     Media queryMediaById(int id);
+    List<Media> queryCollectionMedia(@Param("collection") String[] collection);
 }

@@ -7,7 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import wrq.rotation.MediaApplication;
+import wrq.rotation.mapper.MediaMapper;
+import wrq.rotation.mapper.UserMapper;
 import wrq.rotation.model.po.Media;
+import wrq.rotation.model.po.User;
 import wrq.rotation.service.MediaService;
 import wrq.rotation.utils.MinioUtil;
 
@@ -27,9 +30,18 @@ public class MediaTest {
     private MinioUtil minioUtil;
     @Autowired
     private MediaService mediaService;
+    @Autowired
+    private MediaMapper mediaMapper;
+    @Autowired
+    private UserMapper userMapper;
     @Test
     public void test02(){
-        mediaService.addMedia(new Media(18,"1","2",LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")),"3","4"));
+        User user=userMapper.queryUser("jojo");
+        String[] concern=user.getConcern().substring(1,user.getConcern().length()-1).split("[,]");
+        userMapper.queryConcern(concern);
+
+        String[] fans=user.getFans().substring(1,user.getFans().length()-1).split("[,]");
+        userMapper.queryFans(fans);
     }
     @Test
     public void test01(){

@@ -22,4 +22,11 @@
     <delete id="deleteMedia">
         delete from rotation_media where id=#{id}
     </delete>
+
+    <select id="queryCollectionMedia" resultType="wrq.rotation.model.po.Media">
+        select*from rotation_media where id in
+        <foreach collection="collection" item="i" separator="," open="(" close=")">
+            ${i}
+        </foreach>
+    </select>
 </mapper>

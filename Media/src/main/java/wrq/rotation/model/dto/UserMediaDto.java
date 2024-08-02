@@ -11,6 +11,9 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserMediaDto {
-    private User user;
-    private List<Media> media;
+    private User user;//用户信息
+    private List<Media> media;//作品
+    private List<Media> collection;//收藏
+    private List<User> concern;//关注
+    private List<User> fans;//粉丝
 }

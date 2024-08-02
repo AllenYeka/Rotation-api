@@ -8,6 +8,6 @@ import wrq.rotation.model.po.User;
 @FeignClient(name = "gateway")
 @Component
 public interface GatewayClient {
-    @GetMapping("/getUserById")
-    public User getUserById(@RequestParam("username") String username);
+    @GetMapping("/getUserByName")
+    public User getUserByName(@RequestParam("username") String username);
 }
