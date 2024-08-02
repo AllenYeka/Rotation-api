@@ -4,7 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="770dd2cb-47da-432a-a784-8d65114367c9" name="更改" comment="又增加了用户和资源的API" />
+    <list default="true" id="770dd2cb-47da-432a-a784-8d65114367c9" name="更改" comment="又增加了用户和资源的API">
+      <change afterPath="$PROJECT_DIR$/Media/src/main/java/wrq/rotation/client/GatewayClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Media/src/main/java/wrq/rotation/model/dto/UserMediaDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/model/po/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/model/po/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/src/test/java/GatewayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/test/java/GatewayTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/target/classes/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/target/classes/wrq/rotation/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/target/classes/wrq/rotation/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/target/classes/wrq/rotation/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/target/classes/wrq/rotation/mapper/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/target/test-classes/GatewayTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/target/test-classes/GatewayTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Media/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/src/main/java/wrq/rotation/MediaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Media/src/main/java/wrq/rotation/MediaApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/src/main/java/wrq/rotation/controller/MediaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Media/src/main/java/wrq/rotation/controller/MediaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/src/main/java/wrq/rotation/model/po/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Media/src/main/java/wrq/rotation/model/po/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/target/classes/wrq/rotation/MediaApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/Media/target/classes/wrq/rotation/MediaApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/target/classes/wrq/rotation/controller/MediaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Media/target/classes/wrq/rotation/controller/MediaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/target/classes/wrq/rotation/model/po/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/Media/target/classes/wrq/rotation/model/po/User.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,6 +93,7 @@
     <setting file="file://$PROJECT_DIR$/Gateway/src/test/java/GatewayTest.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Media/pom.xml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/MediaApplication.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/client/GatewayClient.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/config/MinioConfig.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/config/SecurityConfig.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/controller/MediaController.java" root0="SKIP_INSPECTION" />
@@ -82,6 +102,7 @@
     <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/mapper/MediaMapper.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/mapper/UserMapper.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/model/dto/AllMediaDto.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/model/dto/UserMediaDto.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/model/po/Media.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/model/po/User.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/model/pojo/MyUserDetails.java" root0="SKIP_INSPECTION" />
@@ -143,7 +164,7 @@
       <recent name="wrq.rotation.service.impl" />
     </key>
   </component>
-  <component name="RunManager" selected="应用程序.ContentApplication">
+  <component name="RunManager" selected="应用程序.GatewayApplication">
     <configuration name="ContentApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="wrq.rotation.ContentApplication" />
       <module name="Content" />
@@ -199,11 +220,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="应用程序.ContentApplication" />
-        <item itemvalue="应用程序.MediaApplication" />
         <item itemvalue="应用程序.GatewayApplication" />
-        <item itemvalue="JUnit.MediaTest.test02" />
+        <item itemvalue="应用程序.MediaApplication" />
         <item itemvalue="JUnit.GatewayTest.test01" />
+        <item itemvalue="应用程序.ContentApplication" />
+        <item itemvalue="JUnit.MediaTest.test02" />
       </list>
     </recent_temporary>
   </component>

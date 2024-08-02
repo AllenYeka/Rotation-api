@@ -1,13 +1,14 @@
 package wrq.rotation.controller;
 import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.PageHelper;
-import io.minio.messages.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import wrq.rotation.model.dto.MediaResponse;
+import wrq.rotation.client.GatewayClient;
+import wrq.rotation.model.dto.UserMediaDto;
 import wrq.rotation.model.po.Media;
+import wrq.rotation.model.po.User;
 import wrq.rotation.service.MediaService;
 import wrq.rotation.utils.MinioUtil;
 
@@ -18,7 +19,6 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/media")
@@ -30,6 +30,8 @@ public class MediaController {
     private StringRedisTemplate stringRedisTemplate;
     @Autowired
     private MediaService mediaService;
+    @Autowired
+    private GatewayClient gatewayClient;
 
     @GetMapping("/getPictureByPageNo/{pageNo}")
     public List<Media> getAllMedia(@PathVariable int pageNo){
@@ -81,5 +83,15 @@ public class MediaController {
     @GetMapping("/getMediaByUser")
     public List<Media>  getMediaByUser(String username){
         return mediaService.getMediaByUser(username);
+    }
+
+    @GetMapping("/getUserMediaById")
+    public UserMediaDto getUserMediaById(String username){
+        UserMediaDto userMediaDto=new UserMediaDto();
+        User user= gatewayClient.getUserById(username);
+        List<Media> mediaList=mediaService.getMediaByUser(username);
+        userMediaDto.setUser(user);
+        userMediaDto.setMedia(mediaList);
+        return userMediaDto;
     }
 }

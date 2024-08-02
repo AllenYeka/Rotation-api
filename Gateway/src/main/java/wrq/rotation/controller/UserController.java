@@ -26,4 +26,9 @@ public class UserController {
         }
         return userDtos;
     }
+
+    @GetMapping("/getUserById")
+    public User getUserById(String username){
+        return userMapper.getUserByName(username);
+    }
 }

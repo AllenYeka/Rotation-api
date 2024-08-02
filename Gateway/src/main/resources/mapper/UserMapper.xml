@@ -11,6 +11,10 @@
         select*from rotation_user where username=#{username}
     </select>
 
+    <select id="getUserById" resultType="wrq.rotation.model.po.User">
+        select*from rotation_user where id=#{id}
+    </select>
+
     <insert id="insertUser">
         insert into rotation_user values(null,#{username},#{password},#{bio},#{email},#{avatarUrl})
     </insert>

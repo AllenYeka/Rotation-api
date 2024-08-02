@@ -18,14 +18,6 @@ public class GatewayTest {
 
     @Test
     public void test01(){
-        List<User> users=userMapper.getAllUser();
-        List<UserDto> userDtos=new ArrayList<>();
-        for(int i=0;i<users.size();i++){
-            UserDto userDto=new UserDto();
-            BeanUtils.copyProperties(users.get(i),userDto);
-            userDtos.add(userDto);
-        }
-        for(UserDto userDto:userDtos)
-            System.out.println(userDto);
+        System.out.println(userMapper.getUserById(6));
     }
 }
