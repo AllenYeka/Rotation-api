@@ -45,15 +45,15 @@ public class MediaServiceImpl implements MediaService {
         UserMediaDto userMediaDto=new UserMediaDto();
         userMediaDto.setUser(user);
         userMediaDto.setMedia(mediaMapper.queryMediaByUser(user.getUsername()));
-        if(user.getCollection()!=null) {
+        if(user.getCollection()!=null&&!"".equals(user.getCollection())) {
             String[] collection = user.getCollection().substring(1, user.getCollection().length() - 1).split("[,]");
             userMediaDto.setCollection(mediaMapper.queryCollectionMedia(collection));
         }
-        if(user.getConcern()!=null) {
+        if(user.getConcern()!=null&&!"".equals(user.getConcern())) {
             String[] concern = user.getConcern().substring(1, user.getConcern().length() - 1).split("[,]");
             userMediaDto.setConcern(userMapper.queryConcern(concern));
         }
-        if(user.getFans()!=null) {
+        if(user.getFans()!=null&&!"".equals(user.getFans())) {
             String[] fans = user.getFans().substring(1, user.getFans().length() - 1).split("[,]");
             userMediaDto.setFans(userMapper.queryFans(fans));
         }

@@ -9,7 +9,9 @@ import wrq.rotation.model.dto.UserDto;
 import wrq.rotation.model.po.User;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @SpringBootTest(classes = GatewayApplication.class)
 public class GatewayTest {
@@ -18,6 +20,15 @@ public class GatewayTest {
 
     @Test
     public void test01(){
-        User user=userMapper.getUserById(1);
+        int targetUID=3;
+        String a="[1,3,4,5]";
+        String[] as=a.substring(1,a.length()-1).split(",");
+        List<String> sd= Arrays.stream(as).collect(Collectors.toList());
+        sd.remove(String.valueOf(targetUID));
+        for(String s:sd)
+            System.out.println(s);
+        String[]xc=(String[]) sd.toArray();
+        for(String s:xc)
+            System.out.println(s);
     }
 }
