@@ -11,4 +11,5 @@ public interface UserMapper {
     int updateUser(User user);
     int deleteConcern(User user);
     int deleteFans(User user);
+    int deleteCollection(User user);
 }

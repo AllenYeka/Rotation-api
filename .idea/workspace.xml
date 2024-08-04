@@ -5,19 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="770dd2cb-47da-432a-a784-8d65114367c9" name="更改" comment="改进了获取用户信息的API">
-      <change afterPath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/config/BeanConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/GatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/GatewayApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/mapper/UserMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gateway/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gateway/src/test/java/GatewayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/test/java/GatewayTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gateway/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/target/classes/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/target/classes/wrq/rotation/GatewayApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/target/classes/wrq/rotation/GatewayApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gateway/target/classes/wrq/rotation/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/target/classes/wrq/rotation/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gateway/target/classes/wrq/rotation/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/target/classes/wrq/rotation/mapper/UserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gateway/target/test-classes/GatewayTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/target/test-classes/GatewayTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Media/src/main/java/wrq/rotation/service/impl/MediaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Media/src/main/java/wrq/rotation/service/impl/MediaServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Media/src/test/java/MediaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Media/src/test/java/MediaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Media/target/classes/wrq/rotation/service/impl/MediaServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Media/target/classes/wrq/rotation/service/impl/MediaServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Media/target/test-classes/MediaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Media/target/test-classes/MediaTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,10 +212,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="应用程序.GatewayApplication" />
-        <item itemvalue="JUnit.GatewayTest.test01" />
-        <item itemvalue="应用程序.MediaApplication" />
-        <item itemvalue="JUnit.MediaTest.test02" />
         <item itemvalue="应用程序.ContentApplication" />
+        <item itemvalue="应用程序.MediaApplication" />
+        <item itemvalue="JUnit.GatewayTest.test01" />
+        <item itemvalue="JUnit.MediaTest.test02" />
       </list>
     </recent_temporary>
   </component>

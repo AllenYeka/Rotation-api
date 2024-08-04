@@ -130,4 +130,26 @@ public class UserController {
             userMapper.updateUser(user);
         }
     }
+
+    @PostMapping("/cancelCollection")//取消收藏
+    public void cancelCollection(int UID,int mediaID){
+        User user=userMapper.getUserById(UID);
+        String collection=user.getCollection();
+        if(collection.substring(1,collection.length()-1).length()==1) {
+            user.setCollection(null);
+            userMapper.deleteCollection(user);
+        }
+        else{
+            String[] new_collection=collection.substring(1,collection.length()-1).split(",");
+            List<String> new_collection_List= Arrays.stream(new_collection).collect(Collectors.toList());
+            new_collection_List.remove(String.valueOf(mediaID));
+            String[] result=new_collection_List.toArray(new String[0]);
+            StringBuilder response=new StringBuilder("[");
+            for(String str:result)
+                response.append(str+",");
+            String finally_response=response.substring(0,response.length()-1)+"]";
+            user.setCollection(finally_response.toString());
+            userMapper.deleteCollection(user);
+        }
+    }
 }

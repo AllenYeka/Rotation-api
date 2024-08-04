@@ -40,4 +40,8 @@
     <update id="deleteFans">
         update rotation_user set fans=#{fans} where id=#{id}
     </update>
+
+    <update id="deleteCollection">
+        update rotation_user set collection=#{collection} where id=#{id}
+    </update>
 </mapper>

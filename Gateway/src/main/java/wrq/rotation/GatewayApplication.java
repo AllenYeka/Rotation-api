@@ -9,6 +9,6 @@ import org.springframework.context.ApplicationContext;
 public class GatewayApplication {
     public static void main(String[] args) {
         ApplicationContext applicationContext= SpringApplication.run(GatewayApplication.class, args);
-        System.out.println("杰洛");
+        System.out.println("乔尼");
     }
 }
