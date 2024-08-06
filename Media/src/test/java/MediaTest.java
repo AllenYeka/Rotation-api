@@ -1,26 +1,16 @@
-import com.alibaba.fastjson.JSON;
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
 import io.minio.messages.Item;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.StringRedisTemplate;
-import wrq.rotation.MediaApplication;
-import wrq.rotation.mapper.MediaMapper;
-import wrq.rotation.mapper.UserMapper;
-import wrq.rotation.model.po.Media;
-import wrq.rotation.model.po.User;
-import wrq.rotation.service.MediaService;
-import wrq.rotation.utils.MinioUtil;
+import wrq.rotation.media.MediaApplication;
+import wrq.rotation.media.mapper.MediaMapper;
+import wrq.rotation.media.mapper.UserMapper;
+import wrq.rotation.media.model.po.User;
+import wrq.rotation.media.service.MediaService;
+import wrq.rotation.media.utils.MinioUtil;
 
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.concurrent.ThreadPoolExecutor;
 import java.util.stream.Collectors;
 
 @SpringBootTest(classes = MediaApplication.class)

@@ -26,7 +26,7 @@ spring:
 # Mybatis配置
 mybatis:
   mapper-locations: classpath:/mapper/*Mapper.xml   # 指定resource目录下的XxxMapper配置文件
-  type-aliases-package: wrq.model.po   # 简化resultType中的po类名
+  type-aliases-package: wrq.rotation.media.model.po   # 简化resultType中的po类名
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl   # 配置Mybatis的日志
     map-underscore-to-camel-case: true    # 支持数据表字段下划线与驼峰命名的转换

@@ -2,24 +2,24 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="wrq.rotation.mapper.RoleMapper">
-    <select id="queryAllRole" resultType="wrq.rotation.model.po.Role">
-        select*from role
+<mapper namespace="wrq.rotation.content.mapper.RoleMapper">
+    <select id="queryAllRole" resultType="wrq.rotation.content.model.po.Role">
+        select*from rotation_role
     </select>
 
     <select id="getRoleCount" resultType="int">
-        select count(id) roelCount from role
+        select count(id) roelCount from rotation_role
     </select>
 
     <delete id="deleteRoleById">
-        delete from role where id=#{id}
+        delete from rotation_role where id=#{id}
     </delete>
 
     <update id="updateRole">
-        update role set name=#{name},sex=#{sex},stand_name=#{standName},stand_power=#{standPower},motto=#{motto} where id=#{id}
+        update rotation_role set name=#{name},sex=#{sex},stand_name=#{standName},stand_power=#{standPower},motto=#{motto} where id=#{id}
     </update>
 
     <insert id="insertRole">
-        insert into role values(null,#{name},#{sex},#{standName},#{standPower},#{motto})
+        insert into rotation_role values(null,#{name},#{sex},#{standName},#{standPower},#{motto})
     </insert>
 </mapper>

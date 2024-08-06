@@ -2,20 +2,20 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="wrq.rotation.mapper.MediaMapper">
+<mapper namespace="wrq.rotation.media.mapper.MediaMapper">
     <insert id="insertMedia">
         insert into rotation_media values(null,#{objectName},#{username},#{createTime},#{userAvatarUrl},#{objectUrl})
     </insert>
 
-    <select id="queryAllMedia" resultType="wrq.rotation.model.po.Media">
+    <select id="queryAllMedia" resultType="wrq.rotation.media.model.po.Media">
         select*from rotation_media
     </select>
 
-    <select id="queryMediaByUser" resultType="wrq.rotation.model.po.Media">
+    <select id="queryMediaByUser" resultType="wrq.rotation.media.model.po.Media">
         select*from rotation_media where username=#{username}
     </select>
 
-    <select id="queryMediaById" resultType="wrq.rotation.model.po.Media">
+    <select id="queryMediaById" resultType="wrq.rotation.media.model.po.Media">
         select*from rotation_media where id=#{id}
     </select>
 
@@ -23,7 +23,7 @@
         delete from rotation_media where id=#{id}
     </delete>
 
-    <select id="queryCollectionMedia" resultType="wrq.rotation.model.po.Media">
+    <select id="queryCollectionMedia" resultType="wrq.rotation.media.model.po.Media">
         select*from rotation_media where id in
         <foreach collection="collection" item="i" separator="," open="(" close=")">
             ${i}

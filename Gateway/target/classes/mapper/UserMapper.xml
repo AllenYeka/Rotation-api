@@ -2,21 +2,21 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="wrq.rotation.mapper.UserMapper">
-    <select id="getAllUser" resultType="wrq.rotation.model.po.User">
+<mapper namespace="wrq.rotation.gateway.mapper.UserMapper">
+    <select id="getAllUser" resultType="wrq.rotation.gateway.model.po.User">
         select*from rotation_user
     </select>
 
-    <select id="getUserByName" resultType="wrq.rotation.model.po.User">
+    <select id="getUserByName" resultType="wrq.rotation.gateway.model.po.User">
         select*from rotation_user where username=#{username}
     </select>
 
-    <select id="getUserById" resultType="wrq.rotation.model.po.User">
+    <select id="getUserById" resultType="wrq.rotation.gateway.model.po.User">
         select*from rotation_user where id=#{id}
     </select>
 
     <insert id="insertUser">
-        insert into rotation_user values(null,#{username},#{password},#{bio},#{email},#{avatarUrl})
+        insert into rotation_user values(null,#{username},#{password},#{bio},#{email},#{avatarUrl},#{collection},#{concern},#{fans})
     </insert>
 
     <select id="getAllUsername" resultType="java.lang.String">
