@@ -27,6 +27,12 @@ spring:
           uri: lb://media
           predicates:
             - Path=/media/**
+    # sentinel流控规则
+    sentinel:
+      enabled: true
+      eager: true
+      transport:
+        dashboard: 127.0.0.1:8000
 
 
 # Mybatis配置

@@ -19,9 +19,10 @@ spring:
         enabled: true
     # sentinel流控规则
     sentinel:
+      enabled: true
+      eager: true
       transport:
         dashboard: 127.0.0.1:8000
-      enabled: false
 
 # Mybatis配置
 mybatis:

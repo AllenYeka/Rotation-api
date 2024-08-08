@@ -8,8 +8,4 @@ public interface UserMapper {
     List<User> getAllUser();
     int insertUser(User user);
     List<String> getAllUsername();
-    int updateUser(User user);
-    int deleteConcern(User user);
-    int deleteFans(User user);
-    int deleteCollection(User user);
 }

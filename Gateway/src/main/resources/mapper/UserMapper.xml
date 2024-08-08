@@ -22,26 +22,4 @@
     <select id="getAllUsername" resultType="java.lang.String">
         select username from rotation_user
     </select>
-
-    <update id="updateUser">
-        update rotation_user
-        <set>
-            <if test="collection !=null and collection !=''">collection=#{collection},</if>
-            <if test="concern !=null and concern !=''">concern=#{concern},</if>
-            <if test="fans !=null and fans !=''">fans=#{fans}</if>
-        </set>
-        where id=#{id}
-    </update>
-
-    <update id="deleteConcern">
-        update rotation_user set concern=#{concern} where id=#{id}
-    </update>
-
-    <update id="deleteFans">
-        update rotation_user set fans=#{fans} where id=#{id}
-    </update>
-
-    <update id="deleteCollection">
-        update rotation_user set collection=#{collection} where id=#{id}
-    </update>
 </mapper>
