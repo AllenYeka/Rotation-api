@@ -51,7 +51,7 @@ public class MediaController {
 
     @GetMapping("/getPictureCount")
     public int getPictureCount(){
-        return minioUtil.fileList().size();
+        return minioUtil.fileList("wrq").size();
     }
 
     @PostMapping("/uploadPicture")
@@ -65,8 +65,8 @@ public class MediaController {
             String objectName=fileName.substring(fileName.lastIndexOf("\\")+1);
             media.setCreateTime(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
             media.setObjectName(objectName);
-            minioUtil.upload(fileName, file.getInputStream());
-            media.setObjectUrl(minioUtil.prePicture(objectName).split("\\?")[0]);
+            minioUtil.upload(fileName, file.getInputStream(),"wrq");
+            media.setObjectUrl(minioUtil.prePicture(objectName,"wrq").split("\\?")[0]);
             mediaService.addMedia(media);
         }
         stringRedisTemplate.delete("medias"+RPageNo);
@@ -77,7 +77,7 @@ public class MediaController {
         stringRedisTemplate.delete("medias"+pageNo);
         String objectName=mediaService.getMediaById(pictureId).getObjectName();
         mediaService.deleteMedia(pictureId);
-        return minioUtil.removeFile(objectName);
+        return minioUtil.removeFile(objectName,"wrq");
     }
 
     @GetMapping("/getMediaByUser")
@@ -91,4 +91,5 @@ public class MediaController {
         User user= gatewayClient.getUserByName(username);
         return mediaService.getCCF(user);
     }
+
 }

@@ -1,4 +1,4 @@
-package wrq.rotation.media.utils;
+package wrq.rotation.content.util;
 import io.minio.*;
 import io.minio.http.Method;
 import io.minio.messages.Bucket;
@@ -6,14 +6,14 @@ import io.minio.messages.Item;
 import org.apache.commons.compress.utils.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import wrq.rotation.media.config.MinioConfig;
-
+import wrq.rotation.content.config.MinioConfig;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FilterInputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+
 @Component
 public class MinioUtil {
     @Autowired

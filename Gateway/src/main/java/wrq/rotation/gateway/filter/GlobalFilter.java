@@ -9,7 +9,7 @@ import reactor.core.publisher.Mono;
 public class GlobalFilter implements org.springframework.cloud.gateway.filter.GlobalFilter {
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
-        System.out.println(exchange.getRequest().getHeaders().get("Authorization"));
+        //System.out.println(exchange.getRequest().getHeaders().get("Authorization"));
         return chain.filter(exchange);
     }
 }

@@ -40,7 +40,6 @@ mybatis:
 # Minio配置
 minio:
   endpoint: http://127.0.0.1:9000
-  bucketName: wrq
   user: wrq
   password: 03241818
 

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="wrq.rotation.content.mapper.TipMapper">
+    <select id="queryTipById" resultType="wrq.rotation.content.model.po.Tip">
+        select*from rotation_tip where tipId=#{tipId}
+    </select>
+
+    <select id="queryAllTip" resultType="wrq.rotation.content.model.po.Tip">
+        select tipId,title,username,avatar_url,description,tip_picture from rotation_tip
+    </select>
+
+    <insert id="addTip">
+        insert into rotation_tip values(null,#{title},#{uid},#{username},#{avatarUrl},#{description},#{comments},#{tipPicture})
+    </insert>
+
+    <update id="updateTip">
+        update rotation_tip set comments=#{comments} where tipId=#{tipId}
+    </update>
+</mapper>

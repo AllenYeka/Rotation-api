@@ -11,6 +11,12 @@
     <name>Content Maven Webapp</name>
     <url>http://maven.apache.org</url>
     <dependencies>
+        <!-- minio的依赖 -->
+        <dependency>
+            <groupId>io.minio</groupId>
+            <artifactId>minio</artifactId>
+        </dependency>
+
         <!-- bootstrap配置文件的依赖 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

@@ -27,18 +27,13 @@ public class MediaTest {
     private UserMapper userMapper;
     @Test
     public void test02(){
-        User user=userMapper.queryUser("jojo");
-        String[] concern=user.getConcern().substring(1,user.getConcern().length()-1).split("[,]");
-        userMapper.queryConcern(concern);
-
-        String[] fans=user.getFans().substring(1,user.getFans().length()-1).split("[,]");
-        userMapper.queryFans(fans);
+        System.out.println(minioUtil.prePicture("803.jpg","tip"));
     }
     @Test
     public void test01(){
-        List<Item> items=minioUtil.fileList();
+        List<Item> items=minioUtil.fileList("wrq");
         List<String> pictures=items.stream()
-                .map((item)->{return minioUtil.prePicture(item.objectName());})
+                .map((item)->{return minioUtil.prePicture(item.objectName(),"wrq");})
                 .skip((1-1)*2)
                 .limit(4)
                 .collect(Collectors.toList());

@@ -31,3 +31,9 @@ mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl   # 配置Mybatis的日志
     map-underscore-to-camel-case: true    # 支持数据表字段下划线与驼峰命名的转换
+
+# Minio配置
+minio:
+  endpoint: http://127.0.0.1:9000
+  user: wrq
+  password: 03241818
