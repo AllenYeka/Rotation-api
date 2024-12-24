@@ -10,15 +10,13 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Media {
-    private int id;
+    private Integer id;
     private String objectName;
-    private String username;
-    private String createTime;
-    private String userAvatarUrl;
     private String objectUrl;
-
-    public Media(String username, String userAvatarUrl) {
-        this.username = username;
-        this.userAvatarUrl = userAvatarUrl;
-    }
+    private String createTime;
+    private Integer stockingType;
+    private Integer creator;
+    private String nickname;
+    private String avatar;
+    private boolean status;
 }

@@ -1,11 +1,15 @@
 package wrq.rotation.content.service;
-import wrq.rotation.content.model.dto.TipDto;
+import com.github.pagehelper.PageInfo;
+import org.springframework.web.multipart.MultipartFile;
+import wrq.rotation.content.model.po.Comment;
 import wrq.rotation.content.model.po.Tip;
+
+import java.io.IOException;
 import java.util.List;
 
 public interface TipService {
-    TipDto getTipById(int id);
-    List<Tip> getAllSimpleTip();
-    int addTip(Tip tip);
-    int updateTip(Tip tip);
+    PageInfo tipList(Integer pageNo);
+    Integer addTip(Tip tip, MultipartFile file) throws IOException;
+    List<Comment> getComment(Integer tipId);
+    int addComment(Comment comment);
 }

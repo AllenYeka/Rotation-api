@@ -11,6 +11,13 @@
     <name>Media Maven Webapp</name>
     <url>http://maven.apache.org</url>
     <dependencies>
+        <!-- 工共依赖 -->
+        <dependency>
+            <groupId>wrq</groupId>
+            <artifactId>common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
         <!-- Nacos注册发现的依赖 -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
@@ -43,12 +50,6 @@
             <version>${mybatis.version}</version>
         </dependency>
 
-        <!-- security的依赖 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
-
         <!-- web的依赖 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -59,12 +60,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
-
-        <!-- jwt的依赖 -->
-        <dependency>
-            <groupId>com.auth0</groupId>
-            <artifactId>java-jwt</artifactId>
         </dependency>
 
         <!-- minio的依赖 -->

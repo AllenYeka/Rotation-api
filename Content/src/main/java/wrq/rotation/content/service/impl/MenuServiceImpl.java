@@ -26,9 +26,9 @@ public class MenuServiceImpl implements MenuService {
         return subMenu;
     }
     @Override
-    public List<MenuItemDto> menuList() {
+    public List<MenuItemDto> menuList(boolean userType) {
         List<MenuItemDto> result=new ArrayList<>();
-        List<MenuItem> menuItemList=menuMapper.menuList();
+        List<MenuItem> menuItemList=menuMapper.menuList(userType);
         for(int i=0;i<menuItemList.size();i++){
             if(menuItemList.get(i).getParentId()==0){
                 MenuItemDto menuItemDto=new MenuItemDto(menuItemList.get(i),subMenu(menuItemList.get(i),menuItemList));

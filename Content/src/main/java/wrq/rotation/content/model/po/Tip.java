@@ -7,12 +7,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Tip {
-    private int tipId;
+    private Integer id;
     private String title;
-    private int uid;
-    private String username;
-    private String avatarUrl;
     private String description;
-    private String comments;
-    private String tipPicture;
+    private String cover;
+    private Integer creator;
+    private String nickname;
+    private String avatar;
 }

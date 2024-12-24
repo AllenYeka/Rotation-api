@@ -4,22 +4,23 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="wrq.rotation.content.mapper.RoleMapper">
     <select id="queryAllRole" resultType="wrq.rotation.content.model.po.Role">
-        select*from rotation_role
+        SELECT*FROM rotation_role WHERE deleted=0
     </select>
 
     <select id="getRoleCount" resultType="int">
-        select count(id) roelCount from rotation_role
+        SELECT count(*) role_count FROM rotation_role WHERE deleted=0
     </select>
 
-    <delete id="deleteRoleById">
-        delete from rotation_role where id=#{id}
+    <delete id="deleteRole">
+        UPDATE rotation_role SET deleted=1 WHERE id=#{uid}
     </delete>
 
     <update id="updateRole">
-        update rotation_role set name=#{name},sex=#{sex},stand_name=#{standName},stand_power=#{standPower},motto=#{motto} where id=#{id}
+        UPDATE rotation_role SET name=#{name},sex=#{sex},stand_name=#{standName},stand_power=#{standPower},motto=#{motto},update_time=now()
+        WHERE id=#{id} AND deleted=0
     </update>
 
-    <insert id="insertRole">
-        insert into rotation_role values(null,#{name},#{sex},#{standName},#{standPower},#{motto})
+    <insert id="insertRole" parameterType="wrq.rotation.content.model.po.Role" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        INSERT INTO rotation_role VALUES(null,#{name},#{sex},#{standName},#{standPower},#{motto},0,now(),now())
     </insert>
 </mapper>

@@ -3,30 +3,43 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="wrq.rotation.media.mapper.MediaMapper">
-    <insert id="insertMedia">
-        insert into rotation_media values(null,#{objectName},#{username},#{createTime},#{userAvatarUrl},#{objectUrl})
+    <insert id="insertMedia" parameterType="wrq.rotation.media.model.po.Media" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        INSERT INTO rotation_media VALUES(null,#{objectName},#{objectUrl},#{stockingType},1,#{creator},now(),now())
     </insert>
 
-    <select id="queryAllMedia" resultType="wrq.rotation.media.model.po.Media">
-        select*from rotation_media
+    <!-- 后台管理端 -->
+    <select id="allMedia" resultType="wrq.rotation.media.model.po.Media">
+        SELECT media.id,object_name,object_url,media.create_time,creator,nickname,avatar,stocking_type,media.status
+        FROM rotation_media media
+        LEFT JOIN rotation_user user ON user.id=media.creator
+        ORDER BY media.create_time
     </select>
 
-    <select id="queryMediaByUser" resultType="wrq.rotation.media.model.po.Media">
-        select*from rotation_media where username=#{username}
+    <!-- 用户端 -->
+    <select id="mediaList" resultType="wrq.rotation.media.model.po.Media">
+        SELECT media.id,object_name,object_url,creator,avatar
+        FROM rotation_media media
+        LEFT JOIN rotation_user user ON user.id=media.creator
+        WHERE media.status=1 AND (nickname LIKE CONCAT('%',#{searchInfo},'%') OR object_name LIKE CONCAT('%',#{searchInfo},'%'))
+        ORDER BY media.create_time
     </select>
 
-    <select id="queryMediaById" resultType="wrq.rotation.media.model.po.Media">
-        select*from rotation_media where id=#{id}
-    </select>
-
-    <delete id="deleteMedia">
-        delete from rotation_media where id=#{id}
+    <delete id="mediaStatus">
+        UPDATE rotation_media SET status=#{status} WHERE id=#{mediaId}
     </delete>
 
-    <select id="queryCollectionMedia" resultType="wrq.rotation.media.model.po.Media">
-        select*from rotation_media where id in
-        <foreach collection="collection" item="i" separator="," open="(" close=")">
-            ${i}
-        </foreach>
+    <!-- 获取用户作品 -->
+    <select id="queryMediaByUid" resultType="java.util.Map">
+        SELECT id,object_name objectName,object_url objectUrl FROM rotation_media WHERE creator=#{uid} AND status=1 ORDER BY create_time
+    </select>
+
+    <!-- 收藏列表 -->
+    <select id="queryCollectById" resultType="java.util.Map">
+        SELECT media_id id,media.object_name objectName,media.object_url objectUrl,media.creator,user.avatar,user.email
+        FROM rotation_media_collect collect
+        LEFT JOIN rotation_media media ON media.id=collect.media_id
+        LEFT JOIN rotation_user user ON user.id=media.creator
+        WHERE user_id=#{uid} AND media.status=1 AND collect.deleted=0
+        ORDER BY media.create_time
     </select>
 </mapper>

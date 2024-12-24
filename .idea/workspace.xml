@@ -4,15 +4,127 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="770dd2cb-47da-432a-a784-8d65114367c9" name="更改" comment="改进了获取用户信息的API">
-      <change beforePath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/GatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/GatewayApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/mapper/UserMapper.java" afterDir="false" />
+    <list default="true" id="770dd2cb-47da-432a-a784-8d65114367c9" name="更改" comment="0817修改了上传帖子中单个文件的大小">
+      <change afterPath="$PROJECT_DIR$/Common/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Common/src/main/java/wrq/rotation/common/config/UserContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Common/src/main/java/wrq/rotation/common/model/dto/ResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/controller/RoleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/model/po/Comment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/gateway/filter/TestGatewayFilterFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Content/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/controller/ContentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/controller/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/controller/TipController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/controller/TipController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/filter/TokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/filter/TokenFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/mapper/MenuMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/mapper/MenuMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/mapper/RoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/mapper/RoleMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/mapper/TipMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/mapper/TipMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/mapper/UserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/model/dto/RoleResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/model/dto/TipDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/model/po/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/model/po/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/model/po/Tip.java" beforeDir="false" afterPath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/model/po/Tip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/model/po/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Common/src/main/java/wrq/rotation/common/model/po/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/model/pojo/Comment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/service/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/service/MenuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/service/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/service/RoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/service/TipService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/service/TipService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/service/impl/MenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/service/impl/MenuServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/service/impl/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/service/impl/RoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/service/impl/TipServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/service/impl/TipServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/util/JWTUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/src/main/resources/mapper/MenuMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Content/src/main/resources/mapper/MenuMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/src/main/resources/mapper/RoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Content/src/main/resources/mapper/RoleMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/src/main/resources/mapper/TipMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Content/src/main/resources/mapper/TipMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/src/main/resources/mapper/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/src/test/java/ContentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Content/src/test/java/ContentTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/target/classes/mapper/MenuMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Content/target/classes/mapper/MenuMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/target/classes/mapper/RoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Content/target/classes/mapper/RoleMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/target/classes/mapper/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/target/classes/wrq/rotation/content/controller/ContentController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/target/classes/wrq/rotation/content/controller/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Content/target/classes/wrq/rotation/content/controller/MenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/target/classes/wrq/rotation/content/filter/TokenFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/Content/target/classes/wrq/rotation/content/filter/TokenFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/target/classes/wrq/rotation/content/mapper/MenuMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/Content/target/classes/wrq/rotation/content/mapper/MenuMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/target/classes/wrq/rotation/content/mapper/RoleMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/Content/target/classes/wrq/rotation/content/mapper/RoleMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/target/classes/wrq/rotation/content/mapper/UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/target/classes/wrq/rotation/content/model/dto/RoleResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/target/classes/wrq/rotation/content/model/po/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/Content/target/classes/wrq/rotation/content/model/po/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/target/classes/wrq/rotation/content/model/po/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/target/classes/wrq/rotation/content/service/MenuService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Content/target/classes/wrq/rotation/content/service/MenuService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/target/classes/wrq/rotation/content/service/RoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Content/target/classes/wrq/rotation/content/service/RoleService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/target/classes/wrq/rotation/content/service/impl/MenuServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Content/target/classes/wrq/rotation/content/service/impl/MenuServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/target/classes/wrq/rotation/content/service/impl/RoleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Content/target/classes/wrq/rotation/content/service/impl/RoleServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/target/classes/wrq/rotation/content/util/JWTUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/target/test-classes/ContentTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Content/target/test-classes/ContentTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/gateway/config/AuthenticationFailHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/gateway/config/AuthenticationFailHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/gateway/config/AuthenticationSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/gateway/config/AuthenticationSuccessHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/gateway/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/gateway/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/gateway/controller/TokenController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/gateway/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/gateway/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/gateway/filter/GlobalFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/gateway/filter/GlobalFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/gateway/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/gateway/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/gateway/model/dto/ResponseData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/gateway/model/dto/UserDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/gateway/model/po/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/gateway/model/pojo/MyUserDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/Common/src/main/java/wrq/rotation/common/model/pojo/MyUserDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/gateway/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/gateway/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/gateway/utils/JWTUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gateway/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/src/test/java/GatewayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/test/java/GatewayTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/target/classes/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gateway/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/target/classes/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gateway/target/classes/wrq/rotation/GatewayApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/target/classes/wrq/rotation/GatewayApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gateway/target/classes/wrq/rotation/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/target/classes/wrq/rotation/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gateway/target/classes/wrq/rotation/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/target/classes/wrq/rotation/mapper/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/target/classes/wrq/rotation/gateway/config/AuthenticationFailHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/target/classes/wrq/rotation/gateway/config/AuthenticationFailHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/target/classes/wrq/rotation/gateway/config/AuthenticationSuccessHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/target/classes/wrq/rotation/gateway/config/AuthenticationSuccessHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/target/classes/wrq/rotation/gateway/controller/TestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/target/classes/wrq/rotation/gateway/controller/TestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/target/classes/wrq/rotation/gateway/controller/TokenController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/target/classes/wrq/rotation/gateway/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/target/classes/wrq/rotation/gateway/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/target/classes/wrq/rotation/gateway/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/target/classes/wrq/rotation/gateway/mapper/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/target/classes/wrq/rotation/gateway/model/dto/ResponseData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/target/classes/wrq/rotation/gateway/model/dto/UserDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/target/classes/wrq/rotation/gateway/model/po/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/target/classes/wrq/rotation/gateway/model/pojo/MyUserDetail.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/target/classes/wrq/rotation/gateway/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/target/classes/wrq/rotation/gateway/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/target/classes/wrq/rotation/gateway/utils/JWTUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/target/test-classes/GatewayTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/target/test-classes/GatewayTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Media/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/src/main/java/wrq/rotation/media/client/GatewayClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Media/src/main/java/wrq/rotation/media/client/GatewayClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/src/main/java/wrq/rotation/media/controller/MediaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Media/src/main/java/wrq/rotation/media/controller/MediaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/src/main/java/wrq/rotation/media/filter/TokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Media/src/main/java/wrq/rotation/media/filter/TokenFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/src/main/java/wrq/rotation/media/mapper/MediaMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Media/src/main/java/wrq/rotation/media/mapper/MediaMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/src/main/java/wrq/rotation/media/mapper/UserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/src/main/java/wrq/rotation/media/model/dto/AllMediaDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/src/main/java/wrq/rotation/media/model/dto/MediaResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/src/main/java/wrq/rotation/media/model/dto/UserMediaDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/src/main/java/wrq/rotation/media/model/po/Media.java" beforeDir="false" afterPath="$PROJECT_DIR$/Media/src/main/java/wrq/rotation/media/model/po/Media.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/src/main/java/wrq/rotation/media/model/po/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/src/main/java/wrq/rotation/media/service/MediaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Media/src/main/java/wrq/rotation/media/service/MediaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/src/main/java/wrq/rotation/media/service/impl/MediaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Media/src/main/java/wrq/rotation/media/service/impl/MediaServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/src/main/java/wrq/rotation/media/utils/JWTUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/Common/src/main/java/wrq/rotation/common/util/JWTUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Media/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/src/main/resources/mapper/MediaMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Media/src/main/resources/mapper/MediaMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/src/main/resources/mapper/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/src/test/java/MediaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Media/src/test/java/MediaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Media/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/target/classes/mapper/MediaMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Media/target/classes/mapper/MediaMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/target/classes/mapper/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/target/classes/wrq/rotation/media/client/GatewayClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/Media/target/classes/wrq/rotation/media/client/GatewayClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/target/classes/wrq/rotation/media/controller/MediaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Media/target/classes/wrq/rotation/media/controller/MediaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/target/classes/wrq/rotation/media/filter/TokenFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/Media/target/classes/wrq/rotation/media/filter/TokenFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/target/classes/wrq/rotation/media/mapper/MediaMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/Media/target/classes/wrq/rotation/media/mapper/MediaMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/target/classes/wrq/rotation/media/mapper/UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/target/classes/wrq/rotation/media/model/dto/AllMediaDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/target/classes/wrq/rotation/media/model/dto/MediaResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/target/classes/wrq/rotation/media/model/dto/UserMediaDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/target/classes/wrq/rotation/media/model/po/Media.class" beforeDir="false" afterPath="$PROJECT_DIR$/Media/target/classes/wrq/rotation/media/model/po/Media.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/target/classes/wrq/rotation/media/model/po/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/target/classes/wrq/rotation/media/service/MediaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Media/target/classes/wrq/rotation/media/service/MediaService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/target/classes/wrq/rotation/media/service/impl/MediaServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Media/target/classes/wrq/rotation/media/service/impl/MediaServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/target/classes/wrq/rotation/media/utils/JWTUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Media/target/test-classes/MediaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Media/target/test-classes/MediaTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,11 +134,12 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Application" />
         <option value="MyUserDetails" />
         <option value="UserDetailsServiceImpl" />
         <option value="bootstrap" />
         <option value="XxxMapper配置文件" />
+        <option value="Application" />
+        <option value="XxxMapper映射文件" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -36,75 +149,72 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Common/src/main/java/wrq/rotation/common/config/UserContext.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Common/src/main/java/wrq/rotation/common/model/dto/ResponseDTO.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Common/src/main/java/wrq/rotation/common/model/po/User.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Common/src/main/java/wrq/rotation/common/model/pojo/MyUserDetail.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Common/src/main/java/wrq/rotation/common/util/JWTUtil.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Content/pom.xml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/ContentApplication.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/config/SecurityConfig.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/controller/ContentController.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/controller/MenuController.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/controller/TestController.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/filter/TokenFilter.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/mapper/MenuMapper.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/mapper/RoleMapper.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/mapper/UserMapper.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/model/dto/MenuItemDto.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/model/dto/RoleResponse.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/model/po/MenuItem.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/model/po/Role.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/model/po/User.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/service/MenuService.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/service/RoleService.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/service/impl/MenuServiceImpl.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/service/impl/RoleServiceImpl.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/service/impl/UserDetailsServiceImpl.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/util/JWTUtil.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/ContentApplication.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/config/BeanConfig.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/config/MinioConfig.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/config/SecurityConfig.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/controller/MenuController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/controller/RoleController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/controller/TestController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/controller/TipController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/filter/TokenFilter.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/mapper/MenuMapper.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/mapper/RoleMapper.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/mapper/TipMapper.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/model/dto/MenuItemDto.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/model/po/Comment.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/model/po/MenuItem.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/model/po/Role.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/model/po/Tip.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/service/MenuService.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/service/RoleService.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/service/TipService.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/service/impl/MenuServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/service/impl/RoleServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/service/impl/TipServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/java/wrq/rotation/content/util/MinioUtil.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Content/src/main/resources/application.yml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Content/src/main/resources/bootstrap.yml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Content/src/main/resources/mapper/MenuMapper.xml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Content/src/main/resources/mapper/RoleMapper.xml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Content/src/main/resources/mapper/UserMapper.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Content/src/main/resources/mapper/TipMapper.xml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Content/src/test/java/ContentTest.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Gateway/pom.xml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/GatewayApplication.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/config/AuthenticationFailHandler.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/config/AuthenticationSuccessHandler.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/config/BeanConfig.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/config/SecurityConfig.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/controller/TestController.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/controller/TokenController.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/controller/UserController.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/mapper/UserMapper.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/model/dto/ResponseData.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/model/dto/UserDto.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/model/po/User.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/model/pojo/MyUserDetail.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/service/impl/UserDetailsServiceImpl.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/utils/JWTUtil.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/gateway/GatewayApplication.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/gateway/config/AuthenticationFailHandler.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/gateway/config/AuthenticationSuccessHandler.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/gateway/config/BeanConfig.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/gateway/config/SecurityConfig.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/gateway/controller/TestController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/gateway/controller/UserController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/gateway/filter/GlobalFilter.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/gateway/filter/TestGatewayFilterFactory.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/gateway/mapper/UserMapper.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Gateway/src/main/java/wrq/rotation/gateway/service/impl/UserServiceImpl.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Gateway/src/main/resources/application.yml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Gateway/src/main/resources/mapper/UserMapper.xml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Gateway/src/test/java/GatewayTest.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Media/pom.xml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/MediaApplication.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/client/GatewayClient.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/config/MinioConfig.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/config/SecurityConfig.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/controller/MediaController.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/controller/TestController.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/filter/TokenFilter.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/mapper/MediaMapper.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/mapper/UserMapper.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/model/dto/AllMediaDto.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/model/dto/UserMediaDto.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/model/po/Media.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/model/po/User.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/model/pojo/MyUserDetails.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/service/MediaService.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/service/impl/MediaServiceImpl.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/service/impl/UserDetailsServiceImpl.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/utils/JWTUtil.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/utils/MinioUtil.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/media/MediaApplication.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/media/client/GatewayClient.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/media/config/MinioConfig.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/media/config/SecurityConfig.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/media/controller/MediaController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/media/controller/TestController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/media/filter/TokenFilter.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/media/mapper/MediaMapper.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/media/model/po/Media.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/media/service/MediaService.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/media/service/impl/MediaServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Media/src/main/java/wrq/rotation/media/utils/MinioUtil.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Media/src/main/resources/application.yml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Media/src/main/resources/mapper/MediaMapper.xml" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Media/src/main/resources/mapper/UserMapper.xml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Media/src/test/java/MediaTest.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/pom.xml" root0="SKIP_INSPECTION" />
   </component>
@@ -134,8 +244,13 @@
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-17&quot;,
     &quot;last_opened_file_path&quot;: &quot;E:/Java/Medical&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Facet&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;fileTemplates&quot;
   }
 }</component>
@@ -148,20 +263,20 @@
       <recent name="E:\Java\Rotation\Gateway\src\main\java\wrq\rotation\utils" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="wrq.rotation.model.pojo" />
-      <recent name="wrq.rotation.model.dto" />
-      <recent name="wrq.rotation.utils" />
-      <recent name="wrq.rotation.mapper" />
-      <recent name="wrq.rotation.service.impl" />
+      <recent name="wrq.rotation.common.model.po" />
+      <recent name="wrq.rotation.common.model.pojo" />
+      <recent name="wrq.rotation.content.model.pojo" />
+      <recent name="wrq.rotation.content.util" />
+      <recent name="wrq.rotation.content.config" />
     </key>
   </component>
-  <component name="RunManager" selected="应用程序.GatewayApplication">
+  <component name="RunManager" selected="应用程序.ContentApplication">
     <configuration name="ContentApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="wrq.rotation.ContentApplication" />
+      <option name="MAIN_CLASS_NAME" value="wrq.rotation.content.ContentApplication" />
       <module name="Content" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="wrq.rotation.*" />
+          <option name="PATTERN" value="wrq.rotation.content.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -170,11 +285,11 @@
       </method>
     </configuration>
     <configuration name="GatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="wrq.rotation.GatewayApplication" />
+      <option name="MAIN_CLASS_NAME" value="wrq.rotation.gateway.GatewayApplication" />
       <module name="Gateway" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="wrq.rotation.*" />
+          <option name="PATTERN" value="wrq.rotation.gateway.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -183,27 +298,33 @@
       </method>
     </configuration>
     <configuration name="MediaApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="wrq.rotation.MediaApplication" />
+      <option name="MAIN_CLASS_NAME" value="wrq.rotation.media.MediaApplication" />
       <module name="Media" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="wrq.rotation.media.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GatewayTest.test01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Gateway" />
+    <configuration name="ContentTest.test01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Content" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GatewayTest" />
+      <option name="MAIN_CLASS_NAME" value="ContentTest" />
       <option name="METHOD_NAME" value="test01" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MediaTest.test02" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MediaTest.test01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Media" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MediaTest" />
-      <option name="METHOD_NAME" value="test02" />
+      <option name="METHOD_NAME" value="test01" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -211,11 +332,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="应用程序.GatewayApplication" />
         <item itemvalue="应用程序.ContentApplication" />
+        <item itemvalue="应用程序.GatewayApplication" />
+        <item itemvalue="JUnit.ContentTest.test01" />
         <item itemvalue="应用程序.MediaApplication" />
-        <item itemvalue="JUnit.GatewayTest.test01" />
-        <item itemvalue="JUnit.MediaTest.test02" />
+        <item itemvalue="JUnit.MediaTest.test01" />
       </list>
     </recent_temporary>
   </component>
@@ -284,7 +405,42 @@
       <option name="project" value="LOCAL" />
       <updated>1722596180762</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="0806优化了token的验证逻辑">
+      <created>1722920105375</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1722920105376</updated>
+    </task>
+    <task id="LOCAL-00010" summary="0808将关注,粉丝和收藏功能转移到了内容服务;采用了sentinel流量控制">
+      <created>1723122998087</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1723122998087</updated>
+    </task>
+    <task id="LOCAL-00011" summary="0810新增了论坛交流的相关API(帖子,评论)">
+      <created>1723272606028</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1723272606028</updated>
+    </task>
+    <task id="LOCAL-00012" summary="删除了内容服务和文件资源服务的MyUserDetail类和UserServiceImpl类,因为它们的security仅做资源保护(没有提供登录接口),身份信息的填充在TokenFilter中手动填充">
+      <created>1723296383720</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1723296383720</updated>
+    </task>
+    <task id="LOCAL-00013" summary="0817修改了上传帖子中单个文件的大小">
+      <created>1723873260328</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1723873260328</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -308,6 +464,27 @@
     <MESSAGE value="0713去除了OAuth相关配置(由前端调用)" />
     <MESSAGE value="0731增加了用户和资源的API" />
     <MESSAGE value="改进了获取用户信息的API" />
-    <option name="LAST_COMMIT_MESSAGE" value="改进了获取用户信息的API" />
+    <MESSAGE value="0806优化了token的验证逻辑" />
+    <MESSAGE value="0808将关注,粉丝和收藏功能转移到了内容服务;采用了sentinel流量控制" />
+    <MESSAGE value="0810新增了论坛交流的相关API(帖子,评论)" />
+    <MESSAGE value="删除了内容服务和文件资源服务的MyUserDetail类和UserServiceImpl类,因为它们的security仅做资源保护(没有提供登录接口),身份信息的填充在TokenFilter中手动填充" />
+    <MESSAGE value="0817修改了上传帖子中单个文件的大小" />
+    <option name="LAST_COMMIT_MESSAGE" value="0817修改了上传帖子中单个文件的大小" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="org.springframework.security.web.DefaultSecurityFilterChain" memberName="requestMatcher" />
+      </pinned-members>
+    </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="exchange" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

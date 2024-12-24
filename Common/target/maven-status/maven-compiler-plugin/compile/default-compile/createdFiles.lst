@@ -1,0 +1,5 @@
+wrq\rotation\common\config\UserContext.class
+wrq\rotation\common\model\pojo\MyUserDetail.class
+wrq\rotation\common\util\JWTUtil.class
+wrq\rotation\common\model\po\User.class
+wrq\rotation\common\model\dto\ResponseDTO.class

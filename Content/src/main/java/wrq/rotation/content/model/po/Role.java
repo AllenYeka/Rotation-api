@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 public class Role {
     private int id;
     private String name;
-    private String sex;
+    private boolean sex;
     private String standName;
     private String standPower;
     private String motto;

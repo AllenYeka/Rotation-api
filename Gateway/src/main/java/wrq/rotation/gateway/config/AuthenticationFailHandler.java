@@ -7,7 +7,7 @@ import org.springframework.security.web.server.WebFilterExchange;
 import org.springframework.security.web.server.authentication.ServerAuthenticationFailureHandler;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
-import wrq.rotation.gateway.model.dto.ResponseData;
+import wrq.rotation.common.model.dto.ResponseDTO;
 
 import java.nio.charset.StandardCharsets;
 
@@ -16,7 +16,7 @@ public class AuthenticationFailHandler implements ServerAuthenticationFailureHan
     @Override
     public Mono<Void> onAuthenticationFailure(WebFilterExchange webFilterExchange, AuthenticationException exception) {
         ServerHttpResponse response = webFilterExchange.getExchange().getResponse();
-        String result= JSON.toJSONString(new ResponseData("ERROR", exception.getMessage().toString(),null));
+        String result= JSON.toJSONString(new ResponseDTO("请求失败",500, exception.getMessage().toString()));
         DataBuffer data = response.bufferFactory().wrap(result.toString().getBytes(StandardCharsets.UTF_8));
         return response.writeWith(Mono.just(data));
     }

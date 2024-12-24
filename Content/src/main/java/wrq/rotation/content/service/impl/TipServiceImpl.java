@@ -1,43 +1,53 @@
 package wrq.rotation.content.service.impl;
-import com.alibaba.fastjson.JSON;
-import org.springframework.beans.BeanUtils;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 import wrq.rotation.content.mapper.TipMapper;
-import wrq.rotation.content.model.dto.TipDto;
+import wrq.rotation.content.model.po.Comment;
 import wrq.rotation.content.model.po.Tip;
-import wrq.rotation.content.model.pojo.Comment;
 import wrq.rotation.content.service.TipService;
+import wrq.rotation.content.util.MinioUtil;
 
+import java.io.IOException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class TipServiceImpl implements TipService {
+    private final static Integer PAGE_SIZE=5;
+    @Autowired
+    private MinioUtil minioUtil;
     @Autowired
     private TipMapper tipMapper;
-
     @Override
-    public TipDto getTipById(int id) {
-        Tip tip=tipMapper.queryTipById(id);
-        TipDto tipDto=new TipDto();
-        BeanUtils.copyProperties(tip,tipDto);
-        List<Comment> comments= JSON.parseArray(tip.getComments(), Comment.class);
-        tipDto.setComments(comments);
-        return tipDto;
+    public PageInfo tipList(Integer pageNo) {
+        Page page= PageHelper.startPage(pageNo,PAGE_SIZE);
+        tipMapper.tipList();
+        PageInfo tipList=new PageInfo(page.getResult());//返回前端list、total等
+        return tipList;
     }
 
     @Override
-    public List<Tip> getAllSimpleTip() {
-        return tipMapper.queryAllTip();
+    public Integer addTip(Tip tip, MultipartFile file) throws IOException {
+        String fileName=file.getOriginalFilename();
+        String objectName=fileName.substring(fileName.lastIndexOf("\\")+1);
+        List<String> fileList=minioUtil.fileList("tip").stream().map((item)->{return item.objectName();}).collect(Collectors.toList());
+        if(!fileList.contains(objectName))
+            minioUtil.upload(objectName,file.getInputStream(),"tip");
+        tipMapper.addTip(tip);
+        return tip.getId();
     }
 
     @Override
-    public int addTip(Tip tip) {
-        return tipMapper.addTip(tip);
+    public List<Comment> getComment(Integer tipId) {
+        return tipMapper.getComment(tipId);
     }
 
     @Override
-    public int updateTip(Tip tip) {
-        return tipMapper.updateTip(tip);
+    public int addComment(Comment comment) {
+        return tipMapper.addComment(comment);
     }
 }

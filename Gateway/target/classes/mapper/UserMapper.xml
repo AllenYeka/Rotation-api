@@ -3,23 +3,81 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="wrq.rotation.gateway.mapper.UserMapper">
-    <select id="getAllUser" resultType="wrq.rotation.gateway.model.po.User">
-        select*from rotation_user
+    <select id="queryAllUser" resultType="java.util.Map">
+        SELECT id,username,nickname,bio,email,avatar FROM rotation_user WHERE deleted=0
     </select>
 
-    <select id="getUserByName" resultType="wrq.rotation.gateway.model.po.User">
-        select*from rotation_user where username=#{username}
+    <select id="queryUser" resultType="wrq.rotation.common.model.po.User">
+        SELECT id,username,nickname,bio,email,avatar
+        FROM rotation_user
+        WHERE id=#{uid} AND deleted=0
     </select>
 
-    <select id="getUserById" resultType="wrq.rotation.gateway.model.po.User">
-        select*from rotation_user where id=#{id}
+    <!-- 登录 -->
+    <select id="queryUserByUsername" resultType="wrq.rotation.common.model.po.User">
+        SELECT id,username,password,nickname,user_type,bio,email,avatar,status
+        FROM rotation_user
+        WHERE username=#{username} AND deleted=0
     </select>
 
-    <insert id="insertUser">
-        insert into rotation_user values(null,#{username},#{password},#{bio},#{email},#{avatarUrl},#{collection},#{concern},#{fans})
+    <!-- 注册 -->
+    <insert id="insertUser" parameterType="wrq.rotation.common.model.po.User" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        INSERT INTO rotation_user VALUES(null,#{username},#{password},#{bio},#{email},#{avatar},1,0,now(),now())
     </insert>
 
-    <select id="getAllUsername" resultType="java.lang.String">
-        select username from rotation_user
+    <!-- 第三方用户信息入库 -->
+    <insert id="insertOauthUser" parameterType="wrq.rotation.common.model.po.User">
+        INSERT INTO rotation_user VALUES(#{id},#{username},'OAUTH2',#{nickname},1,#{bio},#{email},#{avatar},1,0,now(),now())
+    </insert>
+
+    <!-- 是否已注册(第三方用户信息入库) -->
+    <select id="existUser" resultType="wrq.rotation.common.model.po.User">
+        SELECT id FROM rotation_user WHERE id=#{uid} AND deleted=0
     </select>
+
+    <!-- 关注列表 -->
+    <select id="queryConcernById" resultType="java.util.Map">
+        SELECT concern.concern_user_id id,nickname,avatar,bio
+        FROM rotation_user_concern concern
+        LEFT JOIN rotation_user user ON concern.concern_user_id=user.id
+        WHERE user_id=#{uid} AND concern.deleted=0
+    </select>
+
+    <!-- 粉丝列表 -->
+    <select id="queryFanById" resultType="java.util.Map">
+        SELECT concern.user_id id,nickname,avatar,bio
+        FROM rotation_user_concern concern
+        LEFT JOIN rotation_user user ON concern.user_id=user.id
+        WHERE concern_user_id=#{uid} AND concern.deleted=0
+    </select>
+
+    <!-- 我收藏的资源Id -->
+    <select id="queryCollectId" resultType="java.lang.Integer">
+        SELECT media_id id FROM rotation_media_collect WHERE user_id=#{uid} AND deleted=0
+    </select>
+
+    <!-- 我关注的用户Id -->
+    <select id="queryConcernId" resultType="java.lang.Integer">
+        SELECT concern_user_id id FROM rotation_user_concern WHERE user_id=#{uid} AND deleted=0
+    </select>
+
+    <!-- 关注 -->
+    <insert id="concern">
+        INSERT INTO rotation_user_concern VALUES(null,#{uid},#{concernId},0,now(),now())
+    </insert>
+
+    <!-- 取关 -->
+    <update id="cancelConcern">
+        UPDATE rotation_user_concern SET deleted=1,update_time=now() WHERE user_id=#{uid} AND concern_user_id=#{concernId}
+    </update>
+
+    <!-- 收藏 -->
+    <insert id="collect">
+        INSERT INTO rotation_media_collect VALUES(null,#{uid},#{mediaId},0,now(),now())
+    </insert>
+
+    <!-- 取消收藏 -->
+    <update id="cancelCollect">
+        UPDATE rotation_media_collect SET deleted=1,update_time=now() WHERE user_id=#{uid} AND media_id=#{mediaId}
+    </update>
 </mapper>

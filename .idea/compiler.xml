@@ -10,6 +10,7 @@
         <module name="Media" />
         <module name="Gateway" />
         <module name="Content" />
+        <module name="Common" />
       </profile>
     </annotationProcessing>
   </component>

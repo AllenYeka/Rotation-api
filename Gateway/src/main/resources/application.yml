@@ -23,10 +23,15 @@ spring:
           uri: lb://content
           predicates:
             - Path=/content/**
+          filters:
+            - AddRequestHeader=Qrole,抱抱
+            - Test
         - id: toMedia
           uri: lb://media
           predicates:
             - Path=/media/**
+
+
     # sentinel流控规则
     sentinel:
       enabled: true
@@ -38,7 +43,6 @@ spring:
 # Mybatis配置
 mybatis:
   mapper-locations: classpath:/mapper/*Mapper.xml   # 指定resource目录下的XxxMapper配置文件
-  type-aliases-package: wrq.rotation.model.po   # 简化resultType中的po类名
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl   # 配置Mybatis的日志
     map-underscore-to-camel-case: true    # 支持数据表字段下划线与驼峰命名的转换
